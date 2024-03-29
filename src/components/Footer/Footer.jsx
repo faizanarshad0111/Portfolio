@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
-                           <h3 className='text-orange-900'>Faizan Arshad </h3>
+                           <h1 className='text-orange-900 font-bold'>Faizan Arshad </h1>
                         </Link>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

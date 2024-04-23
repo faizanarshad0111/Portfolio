@@ -3,7 +3,7 @@ import React from 'react'
 export default function Contact() {
     return (
         <div className="relative flex items-top  bg-white sm:items-center sm:pt-0 p-10">
-            <div className="max-w-6xl mx-auto sm:px-6 lg:px-8 shadow-xl ">
+            <div className="max-w-6xl mx-auto sm:px-6 lg:px-8 shadow-xl pb-4 ">
                 <div className="mt-8 overflow-hidden ">
                     <div className="grid grid-cols-1 md:grid-cols-2">
                         <div className="p-6 mr-2 bg-gray-100 sm:rounded-lg">

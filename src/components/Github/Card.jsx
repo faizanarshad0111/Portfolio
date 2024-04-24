@@ -17,10 +17,10 @@ function Card(props) {
         </div>
         <div class="px-6 pt-4 pb-2">
           <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-           <a href={props.Github} target="_blank">Github</a> 
+           <a className="hover:text-orange-700" href={props.Github} target="_blank">Github</a> 
           </span>
           <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          <a href={props.Url}  target="_blank">Visit</a> 
+          <a className="hover:text-orange-700" href={props.Url}  target="_blank">Visit</a> 
           </span>
         </div>
       </div>

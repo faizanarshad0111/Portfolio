@@ -27,8 +27,8 @@ function Github() {
     />   <Card
     imgs={'https://i.postimg.cc/g2McRrBn/Blog.png'}
     ProjectName={"Portfolio/Blog Website "}
-    Github={"https://github.com/faizanarshad0111/Projects.git"}
-    Url={"https://faizanarshad0111.github.io/Projects/"}
+    Github={"https://github.com/faizanarshad0111/Portfolio.git"}
+    Url={"https://portfolio-ugy1.vercel.app/"}
   />
 </div>
     </>

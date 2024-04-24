@@ -7,7 +7,7 @@ export default function Header() {
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
-                       <p className='text-xl'>PortFolio.</p> 
+                       <p className='text-2xl font-bold text-orange-700 '>PortFolio.</p> 
                     </Link>
                     <div className="flex items-center lg:order-2 ">
                      

@@ -1,11 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react';
+import axios from 'axios';
 
 export default function Contact() {
+      const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]:e.target.value
+
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const register = await axios.post(`${import.meta.env.VITE_LOCAL_URL}/register/`,formData)
+    console.log(register.data);
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+    alert("Acount created");
+
+
+  };
+
+
+    
     return (
         <div className="relative flex items-top  bg-white sm:items-center sm:pt-0 p-10">
-            <div className="max-w-6xl mx-auto sm:px-6 lg:px-8 shadow-xl pb-4 ">
+            <div className="max-w-6xl mx-auto sm:px-6 lg:px-8 shadow-xl pb-12 mt-10  border">
                 <div className="mt-8 overflow-hidden ">
-                    <div className="grid grid-cols-1 md:grid-cols-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2"> 
                         <div className="p-6 mr-2 bg-gray-100 sm:rounded-lg">
                             <h1 className="text-3xl sm:text-4xl text-gray-800 font-extrabold tracking-tight">
                                 Get in touch: 
@@ -38,7 +69,7 @@ export default function Contact() {
                                     />
                                 </svg>
                                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    Acme Inc, Street, State, Postal Code
+                                    Lahore , Pakistan
                                 </div>
                             </div>
 
@@ -60,7 +91,7 @@ export default function Contact() {
                                     />
                                 </svg>
                                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    +44 1234567890
+                                    +00 1234567890
                                 </div>
                             </div>
 
@@ -82,20 +113,22 @@ export default function Contact() {
                                     />
                                 </svg>
                                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    info@acme.org
+                                    faizanarashad0111@gmail.com
                                 </div>
                             </div>
                         </div>
 
-                        <form className="p-6 flex flex-col justify-center">
+                        <form onSubmit={handleSubmit} className="p-6 flex flex-col justify-center">
                             <div className="flex flex-col">
                                 <label for="name" className="hidden">
                                     Full Name
                                 </label>
                                 <input
-                                    type="name"
-                                    name="name"
-                                    id="name"
+                                  type="text"
+                                  id="name"
+                                  name="name"
+                                  value={formData.name}
+                                  onChange={handleChange}
                                     placeholder="Full Name"
                                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
                                 />
@@ -106,23 +139,26 @@ export default function Contact() {
                                     Email
                                 </label>
                                 <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
+                                 type="email"
+                                 id="email"
+                                 name="email"
+                                 value={formData.email}
+                                 onChange={handleChange}
                                     placeholder="Email"
                                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
                                 />
                             </div>
 
                             <div className="flex flex-col mt-2">
-                                <label for="tel" className="hidden">
+                                <label for="message" className="hidden">
                                     Number
                                 </label>
-                                <input
-                                    type="tel"
-                                    name="tel"
-                                    id="tel"
-                                    placeholder="Telephone Number"
+                                <textarea
+                                     id="message"
+                                     name="message"
+                                     value={formData.message}
+                                     onChange={handleChange}
+                                    placeholder="Your Message"
                                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
                                 />
                             </div>

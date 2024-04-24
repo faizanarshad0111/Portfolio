@@ -18,7 +18,7 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const register = await axios.post(`${import.meta.env.VITE_LOCAL_URL}/register/`,formData)
+    const register = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register/`,formData)
     console.log(register.data);
     setFormData({
       name: "",
